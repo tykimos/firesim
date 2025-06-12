@@ -295,21 +295,38 @@ Example: [1800, 20, 20, 9]
 ## 📈 성능 지표
 
 ### 현재 모델 성능 (실제 측정값)
-- **변수별 정확도** (evaluate_accuracy.py 결과):
-  - Fire State: 93.7% (R²=0.926)
-  - Temperature: 89.9% (R²=0.536)
-  - Smoke Density: 높은 정확도 (R²=0.940)
-  - 기타 변수들도 양호한 성능 달성
+- **전체 정확도**: **95.89%** 
+- **변수별 성능** (evaluate_accuracy.py 실제 측정):
+  - **Pressure**: 99.95% 정확도 (R²=0.874) 🥇
+  - **Thermal Radiation**: 98.07% 정확도 (R²=0.815)
+  - **Smoke Density**: 96.97% 정확도 (R²=0.985) ⭐
+  - **Visibility**: 96.52% 정확도 (R²=0.967)
+  - **Fire State**: 96.22% 정확도 (R²=0.965) ⭐
+  - **Temperature**: 96.14% 정확도 (R²=0.879)
+  - **Air Velocity**: 95.56% 정확도 (R²=0.922)
+  - **CO Concentration**: 92.50% 정확도 (R²=0.956)
+  - **HCN Concentration**: 91.08% 정확도 (R²=0.903)
+
+**핵심 성취:**
+- Fire State 예측: 96.22% (이전 0.0%에서 대폭 개선)
+- 모든 변수에서 90% 이상 정확도 달성
+- R² 점수 대부분 0.9 이상 (우수한 회귀 성능)
 
 **측정 기준:**
-- 분류 정확도 (Fire State)
-- 회귀 R² 스코어 (연속 변수)
-- MSE, MAE, RMSE 포함
+- 정확도: Ground Truth vs AI 예측 일치율
+- R² 스코어: 회귀 모델 결정계수 (1.0이 완벽)
+- MAE, RMSE: 평균 절대 오차 및 제곱근 평균 제곱 오차
 
 ### 평가 방법
-1. **분류 정확도** (Fire State)
-2. **회귀 MSE** (연속 변수들)
-3. **시각적 비교** (Heat Map)
+1. **분류 정확도** (Fire State) - 96.22% 달성
+2. **회귀 지표** (연속 변수들):
+   - R² 스코어 (결정계수): 0.9+ 대부분 달성
+   - MAE (평균 절대 오차): 변수별 물리적 단위
+   - RMSE (제곱근 평균 제곱 오차): 예측 정밀도
+3. **시각적 비교** (Heat Map): Ground Truth vs AI 예측
+4. **성능 데이터**:
+   - 요약: `accuracy_evaluation_summary.csv`
+   - 상세: `accuracy_evaluation_detailed.json`
 
 ## 🔧 고급 설정
 

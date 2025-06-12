@@ -202,6 +202,10 @@ fire_simulation_*.json
 *_predictions.bin
 *_predictions.json
 
+# Keep evaluation results (important performance data)
+!accuracy_evaluation_summary.csv
+!accuracy_evaluation_detailed.json
+
 # Image and video files
 *.png
 *.jpg
